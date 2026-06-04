@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>oiioCare · Product and about</title>
+  <style>
+    :root {
+      --bg: #faf6ff;
+      --surface: #ffffff;
+      --surface-warm: #fff7fd;
+      --fg: #21145d;
+      --fg-2: #47368f;
+      --muted: #6f639a;
+      --meta: var(--muted);
+      --border: #eadfff;
+      --border-soft: #f4edff;
+      --accent: #7047df;
+      --accent-on: #ffffff;
+      --accent-hover: color-mix(in oklab, var(--accent), black 8%);
+      --accent-active: color-mix(in oklab, var(--accent), black 14%);
+      --success: #17a34a;
+      --warn: #eab308;
+      --danger: #dc2626;
+      --font-display: "Inter", -apple-system, system-ui, sans-serif;
+      --font-body: "Inter", -apple-system, system-ui, sans-serif;
+      --font-mono: ui-monospace, "JetBrains Mono", monospace;
+      --text-xs: 12px;
+      --text-sm: 14px;
+      --text-base: 16px;
+      --text-lg: 20px;
+      --text-xl: 24px;
+      --text-2xl: 32px;
+      --text-3xl: 48px;
+      --text-4xl: 64px;
+      --leading-body: 1.5;
+      --leading-tight: 1.2;
+      --tracking-display: -0.01em;
+      --space-1: 4px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-5: 20px;
+      --space-6: 24px;
+      --space-8: 32px;
+      --space-12: 48px;
+      --space-20: 80px;
+      --section-y-desktop: 80px;
+      --section-y-tablet: 48px;
+      --section-y-phone: 32px;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-pill: 9999px;
+      --elev-flat: none;
+      --elev-ring: 0 0 0 1px var(--border);
+      --elev-raised: 0 16px 42px color-mix(in oklab, var(--fg), transparent 90%);
+      --focus-ring: 0 0 0 3px color-mix(in oklab, var(--accent), transparent 70%);
+      --motion-fast: 150ms;
+      --motion-base: 200ms;
+      --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+      --container-max: 1200px;
+      --container-gutter-desktop: 24px;
+      --container-gutter-tablet: 16px;
+      --container-gutter-phone: 12px;
+      --pink: #f055a5;
+      --pink-soft: #ffe6f4;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #fffafe 0%, #f4ecff 100%);
+      color: var(--fg);
+      font-family: var(--font-body);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: color-mix(in oklab, var(--bg), transparent 10%);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 78px;
+      gap: 24px;
+    }
+    .brand strong {
+      display: block;
+      color: var(--accent);
+      font-size: 30px;
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+    .brand span { color: var(--fg); font-size: 12px; font-weight: 800; }
+    .nav { display: flex; gap: 34px; color: var(--fg); font-weight: 750; font-size: 14px; }
+    .nav a:hover { color: var(--accent); }
+    .top-actions { display: inline-flex; align-items: center; gap: 12px; }
+    .lang-toggle {
+      min-height: 42px;
+      padding: 0 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 18px;
+      color: var(--accent);
+      background: color-mix(in oklab, var(--surface), transparent 8%);
+      font-weight: 850;
+      box-shadow: 0 10px 24px color-mix(in oklab, var(--accent), transparent 90%);
+    }
+    .lang-toggle:hover { border-color: var(--accent); }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 24px;
+      border-radius: 24px;
+      background: var(--accent);
+      color: var(--accent-on);
+      font-weight: 850;
+      box-shadow: 0 14px 28px color-mix(in oklab, var(--accent), transparent 76%);
+    }
+    .hero {
+      padding: 86px 0 54px;
+      text-align: center;
+    }
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--pink);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      margin-bottom: 18px;
+      color: var(--accent);
+      font-size: clamp(44px, 6vw, 76px);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+    }
+    h2 {
+      margin-bottom: 18px;
+      color: var(--fg);
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+    }
+    .lead {
+      max-width: 680px;
+      margin: 0 auto;
+      color: var(--fg-2);
+      font-size: 18px;
+      line-height: 1.75;
+    }
+    .text-panel {
+      max-width: 840px;
+      padding: 34px;
+      border-radius: 28px;
+      border: 1px solid var(--border);
+      background: color-mix(in oklab, var(--surface), transparent 4%);
+      box-shadow: 0 14px 28px color-mix(in oklab, var(--fg), transparent 94%);
+    }
+    .text-panel p {
+      margin: 0;
+      color: var(--fg-2);
+      font-size: 18px;
+      line-height: 1.9;
+    }
+    .text-panel p + p { margin-top: 18px; }
+    section { padding: 72px 0; border-top: 1px solid var(--border); }
+    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .card {
+      min-height: 220px;
+      padding: 28px;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background: color-mix(in oklab, var(--surface), transparent 4%);
+      box-shadow: 0 14px 28px color-mix(in oklab, var(--fg), transparent 94%);
+    }
+    .card h3 { margin-bottom: 12px; color: var(--accent); font-size: 24px; }
+    .card p, .card li { color: var(--fg-2); line-height: 1.75; }
+    .card ul { margin: 0; padding-left: 20px; }
+    .quote {
+      padding: 34px;
+      border-radius: 26px;
+      background: linear-gradient(135deg, var(--pink-soft), var(--surface));
+      border: 1px solid var(--border);
+      color: var(--fg);
+      font-size: 24px;
+      line-height: 1.5;
+      font-weight: 850;
+    }
+    .contact-panel {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      padding: 34px;
+      border-radius: 28px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+    footer {
+      padding: 38px 0;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 820px) {
+      .topbar-inner { align-items: flex-start; flex-direction: column; padding: 18px 0; }
+      .nav { flex-wrap: wrap; gap: 16px 24px; }
+      .top-actions { width: 100%; justify-content: flex-start; }
+      .grid, .grid-3, .contact-panel { grid-template-columns: 1fr; }
+      .text-panel { padding: 24px; }
+      .text-panel p { font-size: 16px; }
+      section { padding: 54px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html" aria-label="oiioCare home" data-i18n-aria-label="brandHome"><strong>oiioCare</strong><span data-i18n="tagline">Your little parrot companion for appetite and emotions</span></a>
+      <nav class="nav" aria-label="二级页导航">
+        <a href="index.html" data-i18n="navHome">Home</a>
+        <a href="#features" data-i18n="navProduct">Product</a>
+        <a href="#bird">oiio 小鹦</a>
+        <a href="#about" data-i18n="navAbout">About</a>
+        <a href="#faq" data-i18n="navFaq">FAQ</a>
+        <a href="#contact" data-i18n="navContact">Contact</a>
+      </nav>
+      <div class="top-actions">
+        <button class="lang-toggle" type="button" data-lang-toggle aria-label="Switch language">中文</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" data-od-id="details-hero">
+      <div class="container">
+        <p class="eyebrow" data-i18n="detailsEyebrow">oiioCare · Little Parrot Appetite</p>
+        <h1 data-i18n="detailsHeroTitle">Meet the little parrot that helps you slow down around appetite.</h1>
+        <p class="lead" data-i18n="detailsHeroLead">When an urge to eat suddenly appears, oiioCare helps you pause, record it, and understand the feeling behind it.</p>
+      </div>
+    </section>
+
+    <section id="features" data-od-id="details-features">
+      <div class="container">
+        <p class="eyebrow" data-i18n="productEyebrow">Product</p>
+        <h2 data-i18n="productTitle">A personable little parrot nutritionist helps you slowly stop chaotic eating.</h2>
+        <div class="text-panel">
+          <p data-i18n="productText">Of course, you can also choose to let her “scold” you until you stop eating.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="bird" data-od-id="details-bird">
+      <div class="container grid">
+        <div>
+          <p class="eyebrow">oiio 小鹦</p>
+          <h2 data-i18n="birdTitle">It is not a coach. It is a companion that does not rush you.</h2>
+          <p class="lead" data-i18n="birdLead">Little Parrot starts with empathy, then offers one gentle next step. It avoids command-style advice, shame, and reducing complex feelings to “willpower.”</p>
+        </div>
+        <div class="quote" data-i18n="birdQuote">“I do not need another reminder that I failed. I need permission to slow down first.”</div>
+      </div>
+    </section>
+
+    <section id="about" data-od-id="details-about">
+      <div class="container">
+        <p class="eyebrow" data-i18n="aboutEyebrow">About</p>
+        <h2 data-i18n="aboutTitle">oiioCare is a small tool for recording the relationship between appetite thoughts and emotions.</h2>
+        <div class="text-panel">
+          <p data-i18n="aboutP1">It is not an app for restricting your diet. It is a little parrot that helps you understand “why I want to eat.”</p>
+          <p data-i18n="aboutP2">When you suddenly really want to eat, just tap the “emergency button.” Little Parrot will help you record your appetite intensity, your mood such as boredom, anxiety, anger, or loneliness, whether you ate or did not eat, and how the timeline changes through the day.</p>
+          <p data-i18n="aboutP3">Over time, you may notice that your appetite has patterns. Sometimes it is not hunger. Sometimes it is a need for a little gentle attention.</p>
+          <p data-i18n="aboutP4">We believe every appetite is not an enemy. It may be an emotion, a piece of pressure, or a quiet longing. Understanding it is where self-healing begins.</p>
+          <p data-i18n="aboutP5">Little Parrot Appetite hopes to become your awareness partner. When you feel anxious, binge, guilty, or simply want to sit quietly for a while, a little parrot stays by your side.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" data-od-id="details-faq">
+      <div class="container grid">
+        <article class="card"><h3 data-i18n="faqTreatmentTitle">Does oiioCare replace treatment?</h3><p data-i18n="faqTreatmentText">No. It is a daily companion and self-observation tool. If distress continues or gets worse, professional support is still important.</p></article>
+        <article class="card"><h3 data-i18n="faqCaloriesTitle">Why does it not emphasize calories?</h3><p data-i18n="faqCaloriesText">Because the product focuses on emotions, situations, and sustainable care actions instead of creating more anxiety.</p></article>
+      </div>
+    </section>
+
+    <section id="contact" data-od-id="details-contact">
+      <div class="container contact-panel">
+        <div>
+          <p class="eyebrow" data-i18n="contactEyebrow">Contact</p>
+          <h2 data-i18n="contactTitle">Download oiioCare · Little Parrot Appetite</h2>
+          <p class="lead" data-i18n="contactLead">For people who want to try an appetite-and-emotion companion, and for hackathon judges who need to understand the product loop quickly.</p>
+        </div>
+        <a class="btn" href="https://apps.apple.com/us/app/oiiocare-%E5%B0%8F%E9%B9%A6%E9%A3%9F%E6%AC%B2/id6754634392?l=zh-Hans-CN" target="_blank" rel="noopener" data-i18n="downloadApp">Download App</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" data-i18n="footer">© 2026 oiioCare · Your little parrot companion for appetite and emotions</div>
+  </footer>
+  <script>
+    const i18n = {
+      en: {
+        documentTitle: "oiioCare · Product and about",
+        brandHome: "oiioCare home",
+        tagline: "Your little parrot companion for appetite and emotions",
+        navHome: "Home",
+        navProduct: "Product",
+        navAbout: "About",
+        navFaq: "FAQ",
+        navContact: "Contact",
+        detailsEyebrow: "oiioCare · Little Parrot Appetite",
+        detailsHeroTitle: "Meet the little parrot that helps you slow down around appetite.",
+        detailsHeroLead: "When an urge to eat suddenly appears, oiioCare helps you pause, record it, and understand the feeling behind it.",
+        productEyebrow: "Product",
+        productTitle: "A personable little parrot nutritionist helps you slowly stop chaotic eating.",
+        productText: "Of course, you can also choose to let her “scold” you until you stop eating.",
+        birdTitle: "It is not a coach. It is a companion that does not rush you.",
+        birdLead: "Little Parrot starts with empathy, then offers one gentle next step. It avoids command-style advice, shame, and reducing complex feelings to “willpower.”",
+        birdQuote: "“I do not need another reminder that I failed. I need permission to slow down first.”",
+        aboutEyebrow: "About",
+        aboutTitle: "oiioCare is a small tool for recording the relationship between appetite thoughts and emotions.",
+        aboutP1: "It is not an app for restricting your diet. It is a little parrot that helps you understand “why I want to eat.”",
+        aboutP2: "When you suddenly really want to eat, just tap the “emergency button.” Little Parrot will help you record your appetite intensity, your mood such as boredom, anxiety, anger, or loneliness, whether you ate or did not eat, and how the timeline changes through the day.",
+        aboutP3: "Over time, you may notice that your appetite has patterns. Sometimes it is not hunger. Sometimes it is a need for a little gentle attention.",
+        aboutP4: "We believe every appetite is not an enemy. It may be an emotion, a piece of pressure, or a quiet longing. Understanding it is where self-healing begins.",
+        aboutP5: "Little Parrot Appetite hopes to become your awareness partner. When you feel anxious, binge, guilty, or simply want to sit quietly for a while, a little parrot stays by your side.",
+        faqTreatmentTitle: "Does oiioCare replace treatment?",
+        faqTreatmentText: "No. It is a daily companion and self-observation tool. If distress continues or gets worse, professional support is still important.",
+        faqCaloriesTitle: "Why does it not emphasize calories?",
+        faqCaloriesText: "Because the product focuses on emotions, situations, and sustainable care actions instead of creating more anxiety.",
+        contactEyebrow: "Contact",
+        contactTitle: "Download oiioCare · Little Parrot Appetite",
+        contactLead: "For people who want to try an appetite-and-emotion companion, and for hackathon judges who need to understand the product loop quickly.",
+        downloadApp: "Download App",
+        footer: "© 2026 oiioCare · Your little parrot companion for appetite and emotions",
+        switchTo: "中文"
+      },
+      zh: {
+        documentTitle: "oiioCare · 产品介绍与关于我们",
+        brandHome: "oiioCare 首页",
+        tagline: "小鹦陪你慢慢不乱吃",
+        navHome: "首页",
+        navProduct: "产品介绍",
+        navAbout: "关于我们",
+        navFaq: "常见问题",
+        navContact: "联系我们",
+        detailsEyebrow: "oiioCare · 小鹦食欲",
+        detailsHeroTitle: "认识那只陪你慢慢不乱吃的小鹦鹉。",
+        detailsHeroLead: "当食欲突然冒出来，oiioCare 帮你先停一下、记下来，再看懂它背后的情绪。",
+        productEyebrow: "产品介绍",
+        productTitle: "用一只拟人的小鹦鹉营养师帮助你慢慢不乱吃。",
+        productText: "当然，你也可以选择让她“骂”到你不吃为止。",
+        birdTitle: "它不是教练，是一个不催促的陪伴角色。",
+        birdLead: "小鹦的语气基准是“先共情，再给一步”。它避免命令式建议、避免羞耻感，也避免把复杂情绪简单归因到自控力。",
+        birdQuote: "“我现在不需要被提醒失败，我需要先被允许慢慢来。”",
+        aboutEyebrow: "关于我们",
+        aboutTitle: "oiioCare 是一款帮助你记录食欲念头与情绪关系的小工具。",
+        aboutP1: "它不是一个限制饮食的 App，而是一个陪你理解自己“为什么想吃”的小鹦鹉。",
+        aboutP2: "当你突然特别想吃的时候，只需轻轻点下“紧急按钮”，小鹦就会帮你记录下：你此刻的食欲强度（有多想吃）、你的心情（无聊、焦虑、生气、孤单……）、吃了或没吃的情况，以及一天当中的时间线变化。",
+        aboutP3: "时间久了，你会发现自己的食欲其实有迹可循。有时候那不是饿，只是需要一点温柔的关注。",
+        aboutP4: "我们相信，每一次食欲都不是敌人。它可能是一种情绪、一段压抑、一丝渴望——而理解它，才是自我疗愈的开始。",
+        aboutP5: "「小鹦食欲」希望成为你的觉察伙伴。当你焦虑、暴食、内疚，或只是想静静待一会儿时，有一只小鹦鹉，始终在你身边。",
+        faqTreatmentTitle: "oiioCare 会替代治疗吗？",
+        faqTreatmentText: "不会。它是日常陪伴与自我观察工具；如果困扰持续或加重，应寻求专业支持。",
+        faqCaloriesTitle: "为什么不强调热量？",
+        faqCaloriesText: "因为这个产品关心的是情绪、场景和可持续的照顾动作，而不是制造更多焦虑。",
+        contactEyebrow: "联系我们",
+        contactTitle: "下载 oiioCare-小鹦食欲",
+        contactLead: "适合希望体验食欲与情绪陪伴工具的用户，也适合黑客松评审快速理解产品闭环。",
+        downloadApp: "下载 App",
+        footer: "© 2026 oiioCare · 小鹦陪你慢慢不乱吃",
+        switchTo: "EN"
+      }
+    };
+
+    function applyLanguage(lang) {
+      const dict = i18n[lang] || i18n.en;
+      document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+      document.title = dict.documentTitle;
+      document.querySelectorAll("[data-i18n]").forEach((node) => {
+        node.textContent = dict[node.dataset.i18n] || "";
+      });
+      document.querySelectorAll("[data-i18n-aria-label]").forEach((node) => {
+        node.setAttribute("aria-label", dict[node.dataset.i18nAriaLabel] || "");
+      });
+      document.querySelectorAll("[data-lang-toggle]").forEach((node) => {
+        node.textContent = dict.switchTo;
+        node.setAttribute("aria-label", lang === "zh" ? "Switch to English" : "切换到中文");
+      });
+      localStorage.setItem("oiioCareLang", lang);
+    }
+
+    const savedLang = localStorage.getItem("oiioCareLang") || "en";
+    applyLanguage(savedLang);
+    document.querySelectorAll("[data-lang-toggle]").forEach((node) => {
+      node.addEventListener("click", () => {
+        const nextLang = document.documentElement.lang === "zh-CN" ? "en" : "zh";
+        applyLanguage(nextLang);
+      });
+    });
+  </script>
+</body>
+</html>
