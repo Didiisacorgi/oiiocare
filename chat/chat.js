@@ -12,6 +12,10 @@
   }
   const now = () => new Date(Date.now() + clockOffset);
   const forceOffline = params.get("offline") === "1";
+  function apiUrl(path) {
+    const base = String(window.OIIO_API_BASE || "").replace(/\/$/, "");
+    return base + path;
+  }
 
   let seq = 1;
   const state = {
@@ -734,7 +738,7 @@
         role: m.role === "user" ? "user" : "assistant",
         content: m.text
       }));
-      const res = await fetch("/api/chat", {
+      const res = await fetch(apiUrl("/api/chat"), {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ messages: recent, text }),
@@ -801,7 +805,7 @@
           ]
         });
         if (online()) {
-          fetch("/api/chat", {
+          fetch(apiUrl("/api/chat"), {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ purpose: "vision", text: "", image: { mediaType: photo.mediaType, data: photo.data } })
