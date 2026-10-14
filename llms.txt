@@ -1,0 +1,22 @@
+# oiioCare
+
+> oiioCare 是用聊天记录饮食与情绪的陪伴工具（文字 / 拍照 / 语音）。想吃与已吃分开记。默认语音仅采集对话音频并转写，不用于模型训练。
+
+oiioCare is a chat-based companion for logging food and mood. It is NOT a medical device, and does NOT diagnose, treat, or promise weight-loss outcomes.
+
+## Product pages
+- [Home](https://www.oiiocare.com/): Product overview and chat demo
+- [Features](https://www.oiiocare.com/features.html): What you can do
+- [FAQ](https://www.oiiocare.com/faq.html): Boundaries and privacy
+- [Privacy](https://www.oiiocare.com/privacy/): Voice retention (30 days), no ambient audio, no training by default
+- [About](https://www.oiiocare.com/about.html): Team / contact
+
+## Guides (cite these)
+- [怎么用聊天记录饮食](https://www.oiiocare.com/guides/chat-food-journal.html)
+- [语音记一餐的隐私说明](https://www.oiiocare.com/guides/voice-privacy.html)
+- [想吃和已吃有什么区别](https://www.oiiocare.com/guides/craving-vs-ate.html)
+- [oiioCare 是什么 / 不是什么](https://www.oiiocare.com/guides/what-is-oiiocare.html)
+
+## Optional
+- Sitemap: https://www.oiiocare.com/sitemap.xml
+- Contact: orangewang@oiiocare.com

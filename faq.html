@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>常见问题 / FAQ｜oiioCare</title>
+<meta name="description" content="oiioCare FAQ: who it is for, privacy, and health boundaries. Not a medical device.">
+<link rel="canonical" href="https://www.oiiocare.com/faq.html">
+<link rel="alternate" hreflang="zh-CN" href="https://www.oiiocare.com/faq.html">
+<link rel="alternate" hreflang="x-default" href="https://www.oiiocare.com/faq.html">
+<link rel="stylesheet" href="/styles.css?v=11">
+<style>
+.faq-page{width:min(720px,calc(100% - 32px));margin:28px auto 80px}
+.faq-page .back{display:inline-block;margin-bottom:18px;color:var(--purple);font-weight:800;text-decoration:none}
+.faq-page h1{margin:0 0 8px;font-size:clamp(28px,5vw,40px);letter-spacing:-.03em}
+.faq-page .lead{margin:0 0 28px;color:var(--muted);font-size:15px;line-height:1.55}
+.faq-item{margin:0 0 10px;border:1px solid var(--line);border-radius:16px;background:#fff;overflow:hidden}
+.faq-item summary{padding:16px 18px;cursor:pointer;font-weight:750;list-style:none}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";float:right;color:var(--purple);font-weight:900}
+.faq-item[open] summary::after{content:"–"}
+.faq-item p{margin:0;padding:0 18px 16px;color:var(--muted);line-height:1.6}
+.faq-note{margin-top:22px;color:#9a92a3;font-size:12px}
+</style>
+</head>
+<body>
+<div class="app-shell">
+<header class="topbar">
+  <a class="brand" href="/" data-home><img src="/assets/oiio-app-icon.png" alt="小鹦"><span>oiioCare</span></a>
+  <div class="top-actions">
+    <button class="quiet" type="button" data-lang>EN</button>
+  </div>
+</header>
+<main class="faq-page">
+  <a class="back" href="/" data-home data-i18n="faq.back">← 返回首页</a>
+  <p class="eyebrow" data-i18n="faq.kicker">FAQ</p>
+  <h1 data-i18n="faq.title">你可能想先确认的事</h1>
+  <p class="lead" data-i18n="faq.lead">关于适用人群、隐私和健康边界。oiioCare 不是诊疗工具。</p>
+  <details class="faq-item" open>
+    <summary data-i18n="faq.q1">oiioCare 适合谁？</summary>
+    <p data-i18n="faq.a1">适合想更温和地记录饮食与情绪的人，例如节奏乱、没食欲、情绪性进食，或想把「想吃」和「已吃」分开看清。若正经历严重进食障碍或身体风险，请优先联系专业医生或心理咨询师。</p>
+  </details>
+  <details class="faq-item">
+    <summary data-i18n="faq.q2">它会计算热量或评价我吃得好不好吗？</summary>
+    <p data-i18n="faq.a2">不会用分数或羞辱式评价把你框住。核心是帮你看见状态、把这一刻记下来，而不是把你变成一个数字。</p>
+  </details>
+  <details class="faq-item">
+    <summary data-i18n="faq.q3">小鹦的建议可靠吗？</summary>
+    <p data-i18n="faq.a3">小鹦提供日常陪伴与记录反馈，不替代医疗诊断、治疗或专业营养处方。涉及明显风险时，会建议你寻求现实中的专业支持。</p>
+  </details>
+  <details class="faq-item">
+    <summary data-i18n="faq.q4">我的记录会被别人看到吗？</summary>
+    <p data-i18n="faq.a4">默认不会公开。登录后，记录用于你自己的 Web / App 同步与回看。需要导出或删除时，可联系 orangewang@oiiocare.com。</p>
+  </details>
+  <details class="faq-item">
+    <summary data-i18n="faq.q5">网页现在能正式登录吗？</summary>
+    <p data-i18n="faq.a5">网页 Apple 登录即将开放。现在可以浏览示例对话；正式登录与跨端同步会在配置完成后上线。</p>
+  </details>
+  <p class="faq-note" data-i18n="faq.note">仍有问题？写信到 orangewang@oiiocare.com。</p>
+</main>
+</div>
+<script>
+const copy={
+ zh:{
+  'faq.back':'← 返回首页','faq.kicker':'常见问题','faq.title':'你可能想先确认的事','faq.lead':'关于适用人群、隐私和健康边界。oiioCare 不是诊疗工具。',
+  'faq.q1':'oiioCare 适合谁？','faq.a1':'适合想更温和地记录饮食与情绪的人，例如节奏乱、没食欲、情绪性进食，或想把「想吃」和「已吃」分开看清。若正经历严重进食障碍或身体风险，请优先联系专业医生或心理咨询师。',
+  'faq.q2':'它会计算热量或评价我吃得好不好吗？','faq.a2':'不会用分数或羞辱式评价把你框住。核心是帮你看见状态、把这一刻记下来，而不是把你变成一个数字。',
+  'faq.q3':'小鹦的建议可靠吗？','faq.a3':'小鹦提供日常陪伴与记录反馈，不替代医疗诊断、治疗或专业营养处方。涉及明显风险时，会建议你寻求现实中的专业支持。',
+  'faq.q4':'我的记录会被别人看到吗？','faq.a4':'默认不会公开。登录后，记录用于你自己的 Web / App 同步与回看。需要导出或删除时，可联系 orangewang@oiiocare.com。',
+  'faq.q5':'网页现在能正式登录吗？','faq.a5':'网页 Apple 登录即将开放。现在可以浏览示例对话；正式登录与跨端同步会在配置完成后上线。',
+  'faq.note':'仍有问题？写信到 orangewang@oiiocare.com。'
+ },
+ en:{
+  'faq.back':'← Back home','faq.kicker':'FAQ','faq.title':'Things you may want to know first','faq.lead':'Who it is for, privacy, and health boundaries. oiioCare is not a medical tool.',
+  'faq.q1':'Who is oiioCare for?','faq.a1':'People who want a gentler way to journal food and feelings — messy routines, low appetite, emotional eating, or separating craving from eating. If you are in serious eating-disorder distress or medical risk, please contact a clinician first.',
+  'faq.q2':'Does it count calories or judge how I eat?','faq.a2':'No score-shaming. The point is to notice what is here and write it down — not to turn you into a number.',
+  'faq.q3':'Is oiio’s advice reliable?','faq.a3':'oiio offers companionship and journaling feedback. It does not replace diagnosis, treatment, or professional nutrition care. When risk is clear, it will point you toward real-world support.',
+  'faq.q4':'Will others see my entries?','faq.a4':'Not by default. After sign-in, entries sync for your own Web / App review. For export or deletion, email orangewang@oiiocare.com.',
+  'faq.q5':'Can I sign in on the web now?','faq.a5':'Apple sign-in on the web is coming soon. You can browse the sample chat today; full sign-in and cross-device sync will land after setup.',
+  'faq.note':'Still have a question? Email orangewang@oiiocare.com.'
+ }
+};
+let lang=new URLSearchParams(location.search).get('lang')||localStorage.getItem('oiio-lang')||(navigator.language.startsWith('zh')?'zh':'en');
+lang=lang==='en'?'en':'zh';
+const t=k=>copy[lang][k]||k;
+function render(){
+  document.documentElement.lang=lang==='zh'?'zh-CN':'en';
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n'); if(k) el.textContent=t(k);});
+  document.querySelector('[data-lang]').textContent=lang==='zh'?'EN':'中';
+  try{localStorage.setItem('oiio-lang',lang)}catch(e){} document.querySelectorAll('[data-home]').forEach(a=>{a.href='/';});
+  localStorage.setItem('oiio-lang',lang);
+  const u=new URL(location.href); u.searchParams.set('lang',lang); history.replaceState({},'',u.pathname+u.search);
+}
+document.querySelector('[data-lang]').onclick=()=>{lang=lang==='zh'?'en':'zh';render();};
+render();
+</script>
+</body>
+</html>

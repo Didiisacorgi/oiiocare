@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+Allow: /llms.txt
+Allow: /guides/
+Allow: /sitemap.xml
+
+Sitemap: https://www.oiiocare.com/sitemap.xml

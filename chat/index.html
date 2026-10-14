@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#FBF9FF">
+  <title>和小鹦聊聊 · oiioCare</title>
+  <meta name="description" content="和小鹦聊着记下吃过的、想吃的和当下感受。不用先注册。不是诊疗。">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/assets/oiio-app-icon.png">
+  <link rel="stylesheet" href="/chat/chat.css">
+</head>
+<body>
+  <header class="top">
+    <button class="menu" type="button" data-menu aria-label="打开日期列表">☰</button>
+    <a class="brand" href="/"><img src="/assets/oiio-app-icon.png" alt=""><span>oiioCare</span></a>
+    <nav class="tabs" aria-label="聊天导航">
+      <button type="button" data-tab="chat" class="on">聊天</button>
+      <button type="button" data-tab="today">今日</button>
+      <button type="button" data-tab="review">回看</button>
+    </nav>
+    <button class="today-pill" type="button" data-open-today>今日 · 0 餐</button>
+    <div class="top-right">
+      <span class="sync guest" data-sync><i></i><span data-sync-label>游客 · 只存在本机</span></span>
+      <a class="dl" data-store href="https://apps.apple.com/us/app/oiiocare-%E5%B0%8F%E9%B9%A6%E9%A3%9F%E6%AC%B2/id6754634392" target="_blank" rel="noopener">下载 App</a>
+      <button class="login-link" type="button" data-open-auth>登录</button>
+      <button class="avatar" type="button" data-avatar hidden aria-label="账号">我</button>
+    </div>
+  </header>
+  <div class="banner" data-banner hidden role="status"></div>
+  <div class="shell" data-shell>
+    <aside class="days" data-days aria-label="日期"></aside>
+    <main>
+      <div class="safety" data-safety>
+        <strong>小鹦是陪伴记录，不是诊疗。</strong>
+        <button type="button" data-safety-more aria-expanded="false">展开</button>
+        <p data-safety-body hidden>身体不舒服、情绪很难受的时候，请联系专业人士或当地紧急援助。小鹦不下诊断，也不提供治疗。</p>
+      </div>
+      <div class="log" data-log aria-live="polite">
+        <div class="thread" data-thread></div>
+      </div>
+      <div class="voice-tip" data-voice hidden>用 App 说更顺。<a data-store href="https://apps.apple.com/us/app/oiiocare-%E5%B0%8F%E9%B9%A6%E9%A3%9F%E6%AC%B2/id6754634392" target="_blank" rel="noopener">打开 App Store</a></div>
+      <div class="composer-wrap">
+        <div class="preview" data-preview hidden></div>
+        <form class="composer" data-composer>
+          <button class="pill desk-only" type="button" data-photo>照片</button>
+          <button class="pill desk-only" type="button" data-voice>语音</button>
+          <button class="icon-btn mob-only" type="button" data-photo aria-label="照片">＋</button>
+          <label class="sr" for="draft">想说的话</label>
+          <textarea id="draft" rows="1" data-draft placeholder="想补充点什么都可以…吃了什么、想吃什么、现在感觉"></textarea>
+          <button class="icon-btn mob-only" type="button" data-voice aria-label="语音">🎤</button>
+          <button class="icon-btn mob-only" type="button" data-camera aria-label="拍照">📷</button>
+          <button class="send" type="submit" data-send aria-label="发送">↑</button>
+        </form>
+        <span class="hint">Enter 发送 · Shift+Enter 换行 · 可拖入照片</span>
+      </div>
+      <p class="fine">小鹦是陪伴记录，不是诊疗。</p>
+    </main>
+    <aside class="today" data-today aria-label="今日"></aside>
+  </div>
+  <div class="sheet" data-sheet hidden>
+    <div class="sheet-card" role="dialog" aria-modal="true" data-sheet-card></div>
+  </div>
+  <input class="sr" type="file" accept="image/*" data-file>
+  <input class="sr" type="file" accept="image/*" capture="environment" data-capture>
+  <dialog class="auth" data-auth>
+    <button class="x" type="button" data-close-auth aria-label="关闭">×</button>
+    <img class="mark" src="/assets/oiio-app-icon.png" alt="">
+    <h2>用 App 的账号登录</h2>
+    <p class="lead" data-auth-lead>和 iPhone 上是同一个账号，记录会自动合在一起。</p>
+    <div data-auth-home>
+      <button class="auth-btn" type="button" data-apple>Sign in with Apple</button>
+      <button class="auth-ghost" type="button" data-email-start>邮箱验证码登录</button>
+      <p class="fine">手机上已登录？</p>
+      <button class="auth-ghost" type="button" data-qr>用 iPhone 扫码登录</button>
+      <button class="quiet-link" type="button" data-password-start>已有密码？用密码登录</button>
+    </div>
+    <form data-auth-email hidden>
+      <input type="email" data-email autocomplete="username" placeholder="you@example.com" required>
+      <button class="auth-btn" type="submit">发送验证码</button>
+    </form>
+    <form data-auth-code hidden>
+      <input inputmode="numeric" data-code autocomplete="one-time-code" placeholder="邮件里的验证码" required>
+      <button class="auth-btn" type="submit">登录并合并</button>
+    </form>
+    <form data-auth-password hidden>
+      <input type="email" data-email-pw autocomplete="username" placeholder="you@example.com" required>
+      <input type="password" data-password autocomplete="current-password" placeholder="密码，至少 6 位" required>
+      <button class="auth-btn" type="submit">邮箱密码登录</button>
+    </form>
+    <p class="status" data-auth-status role="status"></p>
+    <p class="fine">继续即表示你已阅读<a href="/privacy/">隐私政策</a> · 先不登录也能继续聊</p>
+  </dialog>
+  <script src="/js/public-config.js"></script>
+  <script src="/js/supabase.js"></script>
+  <script src="/js/oiio-logic.js"></script>
+  <script src="/chat/chat.js"></script>
+</body>
+</html>
